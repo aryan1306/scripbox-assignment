@@ -1,8 +1,18 @@
 import UpvoteIcon from "../icons/thumbs-up.svg";
 
-const ChallengeCard = ({ title, description, upvotes, createdAt, tags }) => {
+const ChallengeCard = ({
+  title,
+  description,
+  upvotes,
+  createdAt,
+  tags,
+  listKey,
+}) => {
   return (
-    <div className="mb-4 w-5/6 rounded-md border border-slate-400 p-4">
+    <div
+      key={listKey}
+      className="mb-4 w-5/6 rounded-md border border-slate-400 p-4"
+    >
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="mt-2 leading-tight">{description}</p>
       <div className="mt-3 flex flex-wrap items-center">

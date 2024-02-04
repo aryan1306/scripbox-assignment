@@ -11,6 +11,7 @@ const Home = ({ setIsLoggedIn }) => {
   const [description, setDescription] = useState("");
   const [checkedTags, setCheckedTags] = useState([]);
   const [allChallenges, setAllChallenges] = useState(challenges);
+  const [filterValue, setFilterValue] = useState("");
 
   const handleChange = (e) => {
     const { value, checked } = e.target;
@@ -35,6 +36,35 @@ const Home = ({ setIsLoggedIn }) => {
     setTitle("");
     setDescription("");
     setCheckedTags([]);
+  };
+
+  const handleFilterChange = (e) => {
+    const { value } = e.target;
+    setFilterValue(value);
+    if (value === "high") {
+      const sorted = [...allChallenges].sort(
+        (a, b) => b.upvotes.length - a.upvotes.length
+      );
+      setAllChallenges(sorted);
+    }
+    if (value === "low") {
+      const sorted = [...allChallenges].sort(
+        (a, b) => a.upvotes.length - b.upvotes.length
+      );
+      setAllChallenges(sorted);
+    }
+    if (value === "oldest") {
+      const sorted = [...allChallenges].sort(
+        (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+      );
+      setAllChallenges(sorted);
+    }
+    if (value === "latest") {
+      const sorted = [...allChallenges].sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      setAllChallenges(sorted);
+    }
   };
 
   return (
@@ -94,10 +124,26 @@ const Home = ({ setIsLoggedIn }) => {
         </div>
       </div>
       <div className="container mx-auto mt-5">
-        <h1 className="mb-10 text-3xl font-bold">All Challenges</h1>
+        <h1 className="mb-8 text-3xl font-bold">All Challenges</h1>
         <div className="container mx-auto">
+          <div className="mb-4 flex items-center">
+            <p className="mr-2 text-xl">Sort By:</p>
+            <select
+              onChange={handleFilterChange}
+              value={filterValue}
+              name="listFilter"
+              id="listFilter"
+            >
+              <option value="">---</option>
+              <option value="high">Upvotes: High to Low</option>
+              <option value="low">Upvotes: Low to High</option>
+              <option value="latest">Date: Latest</option>
+              <option value="oldest">Date: Oldest</option>
+            </select>
+          </div>
           {allChallenges?.map((challenge) => (
             <ChallengeCard
+              listKey={challenge.createdAt}
               title={challenge.title}
               description={challenge.description}
               upvotes={challenge.upvotes}

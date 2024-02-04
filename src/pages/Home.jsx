@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Pill from "../components/Pill";
 import tags from "../config/tags.json";
 import challenges from "../config/challenges.json";
+import ChallengeCard from "../components/ChallengeCard";
 
 const Home = ({ setIsLoggedIn }) => {
   const [title, setTitle] = useState("");
@@ -29,7 +30,7 @@ const Home = ({ setIsLoggedIn }) => {
       upvotes: [],
       createdAt: new Date().toISOString(),
     };
-    setAllChallenges(challenges.unshift(data));
+    setAllChallenges(allChallenges.concat(data));
     console.log({ allChallenges });
     setTitle("");
     setDescription("");
@@ -41,7 +42,7 @@ const Home = ({ setIsLoggedIn }) => {
       <Navbar isHome={true} setIsLoggedIn={setIsLoggedIn} />
       <div className="mt-8 flex w-full justify-center">
         <div className="w-1/2 rounded-lg border border-slate-400 p-6">
-          <h1 className="mb-10 text-3xl font-semibold">Create new challenge</h1>
+          <h1 className="mb-10 text-3xl font-bold">Create new challenge</h1>
           <Input
             id="title"
             label="Title"
@@ -90,6 +91,20 @@ const Home = ({ setIsLoggedIn }) => {
           >
             Create
           </button>
+        </div>
+      </div>
+      <div className="container mx-auto mt-5">
+        <h1 className="mb-10 text-3xl font-bold">All Challenges</h1>
+        <div className="container mx-auto">
+          {allChallenges?.map((challenge) => (
+            <ChallengeCard
+              title={challenge.title}
+              description={challenge.description}
+              upvotes={challenge.upvotes}
+              createdAt={challenge.createdAt}
+              tags={challenge.tags}
+            />
+          ))}
         </div>
       </div>
     </div>

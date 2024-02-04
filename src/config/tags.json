@@ -4,7 +4,7 @@
     { "displayName": "Featured", "value": "featured" },
     { "displayName": "Logic", "value": "logic" },
     { "displayName": "Puzzle", "value": "puzzle" },
-    { "displayName": "AI/ML", "value": "ai_ml" },
+    { "displayName": "AI/ML", "value": "ai/ml" },
     { "displayName": "Database", "value": "database" },
     { "displayName": "Web", "value": "web" }
   ]

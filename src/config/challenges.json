@@ -23,7 +23,7 @@
   {
     "title": "UST D3CODE Campus Hackathon'23",
     "description": "Social interactions on blockchain where users own their data represent a groundbreaking approach to reshaping how we engage in the digital world. This concept revolves around using blockchain technology to create a more secure, user-centric, and transparent environment for online interactions. In this paradigm, users retain ownership and control of their data, which is a significant departure from traditional social media platforms where data exploitation and privacy concerns often prevail.",
-    "tags": ["puzzle", "web", "featured", "database", "ai_ml"],
+    "tags": ["puzzle", "web", "featured", "database", "ai/ml"],
     "upvotes": ["HM91101", "HM05106", "HJ98098"],
     "createdAt": "2023-12-11T03:13:01.226Z"
   },
@@ -31,7 +31,7 @@
     "title": "Rakathon 2023",
     "description": "Rakathon, a 24-hour coding competition by Rakuten India is here again to spark creative thinking and redefine the possibilities of business innovation. Rakathon - a portmanteau of Rakuten and hackathon.",
     "tags": ["database", "frontend", "tech", "logic"],
-    "upvotes": [],
+    "upvotes": ["HM05106"],
     "createdAt": "2023-11-03T10:11:11.226Z"
   },
   {

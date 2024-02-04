@@ -1,0 +1,11 @@
+{
+  "values": [
+    { "displayName": "Tech", "value": "tech" },
+    { "displayName": "Featured", "value": "featured" },
+    { "displayName": "Logic", "value": "logic" },
+    { "displayName": "Puzzle", "value": "puzzle" },
+    { "displayName": "AI/ML", "value": "ai_ml" },
+    { "displayName": "Database", "value": "database" },
+    { "displayName": "Web", "value": "web" }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "title": "BLOCKBASH 2024",
+    "description": "Social interactions on blockchain where users own their data represent a groundbreaking approach to reshaping how we engage in the digital world. This concept revolves around using blockchain technology to create a more secure, user-centric, and transparent environment for online interactions. In this paradigm, users retain ownership and control of their data, which is a significant departure from traditional social media platforms where data exploitation and privacy concerns often prevail.",
+    "tags": ["puzzle", "web", "featured"],
+    "upvotes": ["HM91101", "HM91209"],
+    "createdAt": "2024-02-04T10:17:11.226Z"
+  },
+  {
+    "title": "Cricket Code Champions Hack",
+    "description": "This hackathon invites tech enthusiasts, developers, and cricket aficionados to collaborate on groundbreaking solutions inspired by the world of cricket. Join this hackathon to bowl over the boundaries of convention and score with your ingenious ideas as you embark on a journey that bridges cricket's spirit with tech's prowess.",
+    "tags": ["database", "frontend", "tech"],
+    "upvotes": ["HM91209", "HM91191", "HM91219", "HM05106", "HJ98098"],
+    "createdAt": "2024-02-03T10:11:11.226Z"
+  },
+  {
+    "title": "CyientifIQ Innovation League",
+    "description": "This exhilarating event brings together brilliant minds from various fields to tackle the most pressing issues of our time.",
+    "tags": ["logic", "frontend", "tech", "logic"],
+    "upvotes": ["HM91191", "HM91219", "HM05106"],
+    "createdAt": "2023-12-22T09:01:11.226Z"
+  },
+  {
+    "title": "UST D3CODE Campus Hackathon'23",
+    "description": "Social interactions on blockchain where users own their data represent a groundbreaking approach to reshaping how we engage in the digital world. This concept revolves around using blockchain technology to create a more secure, user-centric, and transparent environment for online interactions. In this paradigm, users retain ownership and control of their data, which is a significant departure from traditional social media platforms where data exploitation and privacy concerns often prevail.",
+    "tags": ["puzzle", "web", "featured", "database", "ai_ml"],
+    "upvotes": ["HM91101", "HM05106", "HJ98098"],
+    "createdAt": "2023-12-11T03:13:01.226Z"
+  },
+  {
+    "title": "Rakathon 2023",
+    "description": "Rakathon, a 24-hour coding competition by Rakuten India is here again to spark creative thinking and redefine the possibilities of business innovation. Rakathon - a portmanteau of Rakuten and hackathon.",
+    "tags": ["database", "frontend", "tech", "logic"],
+    "upvotes": [],
+    "createdAt": "2023-11-03T10:11:11.226Z"
+  },
+  {
+    "title": "Hacknosis",
+    "description": "Developers are out-of-the-box thinkers, so we need your help to improve the flow of information between patients and doctors and identify ways to provide better patient support, regardless of their location.",
+    "tags": ["logic", "database", "tech", "web"],
+    "upvotes": [],
+    "createdAt": "2023-11-03T02:20:11.226Z"
+  }
+]

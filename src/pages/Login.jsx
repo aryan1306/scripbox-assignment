@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import { EMP_IDS } from "../utils/constants";
+import Navbar from "../components/Navbar";
+import Input from "../components/Input";
 
 const Login = ({ setIsLoggedIn }) => {
   const [empId, setEmpId] = useState("");
@@ -9,6 +10,7 @@ const Login = ({ setIsLoggedIn }) => {
   const handleClick = (e) => {
     e.preventDefault();
     if (EMP_IDS.includes(empId)) {
+      localStorage.setItem("empId", empId);
       setIsError(false);
       setIsLoggedIn(true);
     } else {
@@ -17,40 +19,38 @@ const Login = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div className="h-screen w-screen bg-gradient-to-r from-cyan-500 to-blue-500">
       <Navbar isHome={false} />
-      <h1 className="text-center text-5xl font-bold text-white mt-9">
+      <h1 className="mt-9 text-center text-5xl font-bold text-white">
         Welcome to Hack Ideas
       </h1>
-      <div className="md:w-96 w-1/2 mx-auto rounded-lg bg-white p-6 mt-16 md:h-64">
-        <h2 className="text-3xl font-bold text-cyan-500 mb-4 text-center mt-1">
+      <div className="mx-auto mt-16 w-1/2 rounded-lg bg-white p-6 md:h-64 md:w-96">
+        <h2 className="mb-4 mt-1 text-center text-3xl font-bold text-cyan-500">
           Login
         </h2>
-        <label htmlFor="empId">Employee ID</label>
-        <input
-          type="text"
-          name="empId"
+        <Input
+          label="Employee ID"
           id="empId"
           value={empId}
           onChange={(e) => setEmpId(e.target.value)}
-          className="border border-blue-400 focus:ring-2 focus:ring-cyan-500 rounded-md w-full h-9 px-2 outline-none mt-2"
         />
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <button
             id="SUBMIT_BTN"
             type="submit"
             disabled={!empId}
             onClick={handleClick}
-            className="bg-cyan-500 drop-shadow-md rounded-md py-2 px-3 tracking-wide text-white mt-7 disabled:bg-slate-500 disabled:drop-shadow-none disabled:text-slate-300"
+            className="primary-btn mt-7"
           >
             Submit
           </button>
         </div>
-        <p className="text-red-500 text-center mt-2">
+        <p className="mt-2 text-center text-red-500">
           {isError && "Incorrect Employee ID entered, try again!"}
         </p>
       </div>
     </div>
   );
 };
+
 export default Login;

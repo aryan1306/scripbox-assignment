@@ -7,3 +7,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.primary-btn {
+  @apply rounded-md bg-cyan-500 px-3 py-2 tracking-wide text-white drop-shadow-md disabled:cursor-not-allowed disabled:bg-slate-500 disabled:text-slate-300 disabled:drop-shadow-none;
+}
+
+.pill-btn {
+  @apply cursor-pointer rounded-xl border-2 border-slate-300 text-slate-600 checked:bg-blue-500 hover:bg-cyan-50;
+}
+
+.gradient-btn {
+  @apply rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-2 tracking-wide text-white drop-shadow-md disabled:cursor-not-allowed;
+}

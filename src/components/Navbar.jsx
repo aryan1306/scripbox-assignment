@@ -1,11 +1,24 @@
-const Navbar = ({ isHome }) => {
+const Navbar = ({ isHome, setIsLoggedIn }) => {
   return (
     <div
-      className={`w-full h-20 ${
-        isHome ? "bg-cyan-400" : "backdrop-blur-3xl bg-white/30"
-      } drop-shadow-lg flex items-center`}
+      className={`h-20 w-full ${
+        isHome
+          ? "flex items-center justify-between bg-cyan-400 drop-shadow-lg"
+          : "bg-white/30 backdrop-blur-3xl"
+      } flex items-center drop-shadow-lg`}
     >
-      <h1 className="text-white font-bold text-3xl ml-6">Hack Ideas</h1>
+      <h1 className="ml-6 text-3xl font-bold text-white">Hack Ideas</h1>
+      {isHome && (
+        <span
+          onClick={() => {
+            localStorage.removeItem("empId");
+            setIsLoggedIn(false);
+          }}
+          className="mr-6 cursor-pointer font-semibold text-white"
+        >
+          Logout
+        </span>
+      )}
     </div>
   );
 };

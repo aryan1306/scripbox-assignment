@@ -37,6 +37,7 @@ const Login = ({ setIsLoggedIn }) => {
         <div className="flex w-full justify-center">
           <button
             id="SUBMIT_BTN"
+            data-testid="submit"
             type="submit"
             disabled={!empId}
             onClick={handleClick}

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import { currentEmpId } from "./utils/constants";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
-    if (localStorage.getItem("empId")) {
+    if (currentEmpId) {
       return setIsLoggedIn(true);
     }
   }, []);

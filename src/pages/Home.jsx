@@ -5,6 +5,7 @@ import Pill from "../components/Pill";
 import tags from "../config/tags.json";
 import challenges from "../config/challenges.json";
 import ChallengeCard from "../components/ChallengeCard";
+import { currentEmpId } from "../utils/constants";
 
 const Home = ({ setIsLoggedIn }) => {
   const [title, setTitle] = useState("");
@@ -65,6 +66,25 @@ const Home = ({ setIsLoggedIn }) => {
       );
       setAllChallenges(sorted);
     }
+  };
+
+  const handleUpvoteClick = (challengeId) => {
+    const challengeIndex = allChallenges.findIndex(
+      (challenge) => challenge.createdAt === challengeId
+    );
+    const updatedChallenge = { ...allChallenges[challengeIndex] };
+
+    if (updatedChallenge.upvotes.includes(currentEmpId)) {
+      updatedChallenge.upvotes = updatedChallenge.upvotes.filter(
+        (id) => id !== currentEmpId
+      );
+    } else {
+      updatedChallenge.upvotes.push(currentEmpId);
+    }
+
+    const updatedChallenges = [...allChallenges];
+    updatedChallenges[challengeIndex] = updatedChallenge;
+    setAllChallenges(updatedChallenges);
   };
 
   return (
@@ -149,6 +169,7 @@ const Home = ({ setIsLoggedIn }) => {
               upvotes={challenge.upvotes}
               createdAt={challenge.createdAt}
               tags={challenge.tags}
+              handleUpvoteClick={handleUpvoteClick}
             />
           ))}
         </div>

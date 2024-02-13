@@ -1,4 +1,5 @@
 import UpvoteIcon from "../icons/thumbs-up.svg";
+import { currentEmpId } from "../utils/constants";
 
 const ChallengeCard = ({
   title,
@@ -6,13 +7,10 @@ const ChallengeCard = ({
   upvotes,
   createdAt,
   tags,
-  listKey,
+  handleUpvoteClick,
 }) => {
   return (
-    <div
-      key={listKey}
-      className="mb-4 w-5/6 rounded-md border border-slate-400 p-4"
-    >
+    <div className="mb-4 w-5/6 rounded-md border border-slate-400 p-4">
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="mt-2 leading-tight">{description}</p>
       <div className="mt-3 flex flex-wrap items-center">
@@ -24,19 +22,20 @@ const ChallengeCard = ({
       </div>
       <div className="mt-3 flex items-center justify-between">
         <button
+          onClick={() => handleUpvoteClick(createdAt)}
           className={
-            upvotes.includes(localStorage.getItem("empId"))
+            upvotes.includes(currentEmpId)
               ? `flex items-center rounded-md bg-blue-600 p-2 text-white`
               : `rounded-md border border-slate-500 p-2 hover:bg-blue-300 hover:text-white`
           }
         >
-          {upvotes.includes(localStorage.getItem("empId")) ? (
+          {upvotes.includes(currentEmpId) ? (
             <img src={UpvoteIcon} className="text-white" />
           ) : (
             "Upvote"
           )}
           <span
-            className={`rounded-md ${upvotes.includes(localStorage.getItem("empId")) ? "" : "bg-blue-500"} ml-1 px-2 py-1 text-white`}
+            className={`rounded-md ${upvotes.includes(currentEmpId) ? "" : "bg-blue-500"} ml-1 px-2 py-1 text-white`}
           >
             {upvotes.length}
           </span>

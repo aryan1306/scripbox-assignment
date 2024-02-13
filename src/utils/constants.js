@@ -7,3 +7,4 @@ export const EMP_IDS = [
   "HM05106",
   "HJ98098",
 ];
+export const currentEmpId = localStorage.getItem("empId");
